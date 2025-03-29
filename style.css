@@ -68,3 +68,30 @@
     color: red;
   }
   
+
+  .type-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  
+  .weaknesses {
+    margin-top: 15px;
+  }
+  .weaknesses div {
+    margin: 4px 0;
+  }
+
+  .type-button {
+    padding: 6px 12px;
+    margin: 3px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+    font-size: 14px;
+  }
+  
+  
