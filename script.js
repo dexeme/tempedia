@@ -51,7 +51,7 @@ async function buscarTemtem(nome) {
     }
 
     const temtem = data[0];
-    const imageUrl = temtem.icon ? `http://temtem-api.mael.tech${temtem.icon}` : 'http://via.placeholder.com/100';
+    const imageUrl = temtem.icon ? `https://temtem-api.mael.tech${temtem.icon}` : 'https://via.placeholder.com/100';
 
     const fraquezas = calcularFraquezasResistencias(temtem.types);
     const forcas = calcularForcasOfensivas(temtem.types);
