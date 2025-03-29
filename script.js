@@ -12,19 +12,22 @@ async function buscarTemtem(nome) {
 
   infoDiv.innerHTML = "Buscando...";
   try {
-    const response = await fetch("https://temtem-api.mael.tech/api/temtems");
+    const response = await fetch(`https://temtem-api.mael.tech/api/temtems?names=${encodeURIComponent(nome)}`);
     const data = await response.json();
 
-    const temtem = data.find(t => t.name.toLowerCase() === nome.toLowerCase());
-
-    if (!temtem) {
+    if (data.length === 0) {
       infoDiv.innerHTML = `<p class="error">Temtem "${nome}" não encontrado.</p>`;
       return;
     }
 
+    const temtem = data[0];
+
+    // Verifica se há um ícone disponível
+    const imageUrl = temtem.icon ? `https://temtem-api.mael.tech${temtem.icon}` : 'caminho/para/imagem_padrao.png';
+
     const html = `
       <div class="temtem-card">
-        <img src="${temtem.image}" alt="${temtem.name}" />
+        <img src="${imageUrl}" alt="${temtem.name}" />
         <h2>${temtem.name}</h2>
         <div class="types">
           ${temtem.types.map(tipo => `<span class="type">${tipo}</span>`).join('')}
