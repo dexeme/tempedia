@@ -42,9 +42,7 @@ async function buscarTemtem(nome) {
 
   infoDiv.innerHTML = "Buscando...";
   try {
-    const response = await fetch(`http://corsproxy.io/?http://temtem-api.mael.tech/api/temtems?names=${encodeURIComponent(nome)}`);
-
-
+    const response = await fetch(`http://temtem-api.mael.tech/api/temtems?names=${encodeURIComponent(nome)}`);
     const data = await response.json();
 
     if (data.length === 0) {
@@ -54,7 +52,6 @@ async function buscarTemtem(nome) {
 
     const temtem = data[0];
     const imageUrl = temtem.icon ? `http://temtem-api.mael.tech${temtem.icon}` : 'http://via.placeholder.com/100';
-
 
     const fraquezas = calcularFraquezasResistencias(temtem.types);
     const forcas = calcularForcasOfensivas(temtem.types);
