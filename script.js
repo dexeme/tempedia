@@ -42,7 +42,8 @@ async function buscarTemtem(nome) {
 
   infoDiv.innerHTML = "Buscando...";
   try {
-    const response = await fetch(`http://temtem-api.mael.tech/api/temtems?names=${encodeURIComponent(nome)}`);
+    const response = await fetch(`https://corsproxy.io/?https://temtem-api.mael.tech/api/temtems?names=${encodeURIComponent(nome)}`);
+
     const data = await response.json();
 
     if (data.length === 0) {
