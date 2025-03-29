@@ -12,7 +12,7 @@ async function buscarTemtem(nome) {
 
   infoDiv.innerHTML = "Buscando...";
   try {
-    const response = await fetch(`https://temtem-api.mael.tech/api/temtems?names=${encodeURIComponent(nome)}`);
+    const response = await fetch(`http://temtem-api.mael.tech/api/temtems?names=${encodeURIComponent(nome)}`);
     const data = await response.json();
 
     if (data.length === 0) {
@@ -23,7 +23,7 @@ async function buscarTemtem(nome) {
     const temtem = data[0];
 
     // Verifica se há um ícone disponível
-    const imageUrl = temtem.icon ? `https://temtem-api.mael.tech${temtem.icon}` : 'caminho/para/imagem_padrao.png';
+    const imageUrl = temtem.icon ? `http://temtem-api.mael.tech${temtem.icon}` : 'caminho/para/imagem_padrao.png';
 
     const html = `
       <div class="temtem-card">
