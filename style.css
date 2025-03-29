@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .temtem-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .temtem-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  .types {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .type {
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+  
+  .stats {
+    margin-top: 10px;
+  }
+  
+  .stat {
+    margin: 4px 0;
+  }
+  
+  .error {
+    color: red;
+  }
+  
